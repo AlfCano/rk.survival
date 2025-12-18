@@ -1,0 +1,30 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="CoxDiagnostics.js" />
+	<help file="CoxDiagnostics.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<!--
+			<convert id="!edit!" sources="!edit!" mode="equals" standard="!edit!" />
+		-->
+		<!--
+			<connect governor="!edit!.state" client="!edit!.enabled" />
+		-->
+	</logic>
+	<dialog label="Cox Diagnostics (Schoenfeld)">
+		<row id="row_vSCMPPSCMP">
+			<varselector id="diag_selector" />
+			<column id="clm_vrsltSCMPP">
+				<varslot id="diag_model" label="Select Cox Model" source="diag_selector" classes="coxph" required="true" />
+				<preview label="Preview" id="prv_Preview" />
+			</column>
+		</row>
+	</dialog>
+</document>

@@ -1,0 +1,52 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="KaplanMeier.js" />
+	<help file="KaplanMeier.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<!--
+			<convert id="!edit!" sources="!edit!" mode="equals" standard="!edit!" />
+		-->
+		<!--
+			<connect governor="!edit!.state" client="!edit!.enabled" />
+		-->
+	</logic>
+	<dialog label="Kaplan-Meier Analysis">
+		<row id="row_vDDTVNSV0C">
+			<varselector id="km_selector" />
+			<column id="clm_fDDTVNSV0C">
+				<frame label="Data" id="frm_Data">
+					<varslot id="km_time" label="Time Variable (Numeric)" source="km_selector" classes="numeric" required="true" />
+					<varslot id="km_status" label="Status Variable (0=Censored, 1=Event)" source="km_selector" required="true" />
+					<varslot id="km_strata" label="Grouping Variable (Strata, Optional)" source="km_selector" />
+				</frame>
+				<frame label="Plot Options" id="frm_PltOptns">
+					<column id="clm_cSRT1SPV1S">
+						<checkbox id="opt_risk" label="Show Risk Table" value="1" checked="true" />
+						<checkbox id="opt_pval" label="Show P-Value" value="1" checked="true" />
+						<checkbox id="opt_conf" label="Show Confidence Intervals" value="1" checked="true" />
+						<checkbox id="opt_censor" label="Show Censoring Marks" value="1" checked="true" />
+						<dropdown id="opt_palette" label="Color Palette">
+							<option label="Dark2" value="Dark2" checked="true" />
+							<option label="Set1" value="Set1" />
+							<option label="JCO" value="jco" />
+							<option label="Lancet" value="lancet" />
+							<option label="Grey" value="grey" />
+						</dropdown>
+						<stretch />
+						<checkbox id="opt_print_plot" label="Print Plot to Output Window" value="1" checked="true" />
+					</column>
+				</frame>
+				<saveobject label="Save 'survfit' object as" checkable="true" checked="true" initial="km_fit" id="km_save_obj" />
+				<preview label="Preview" id="prv_Preview" />
+			</column>
+		</row>
+	</dialog>
+</document>

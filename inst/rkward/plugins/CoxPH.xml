@@ -1,0 +1,36 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="CoxPH.js" />
+	<help file="CoxPH.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<!--
+			<convert id="!edit!" sources="!edit!" mode="equals" standard="!edit!" />
+		-->
+		<!--
+			<connect governor="!edit!.state" client="!edit!.enabled" />
+		-->
+	</logic>
+	<dialog label="Cox Proportional Hazards">
+		<row id="row_vSOSOTVSVC">
+			<varselector id="cox_selector" />
+			<column id="clm_fSOSOTVSVC">
+				<frame label="Survival Object" id="frm_SrvvlObj">
+					<varslot id="cox_time" label="Time Variable" source="cox_selector" required="true" />
+					<varslot id="cox_status" label="Status Variable" source="cox_selector" required="true" />
+				</frame>
+				<varslot id="cox_covars" label="Covariates (Predictors)" source="cox_selector" required="true" multi="true" />
+				<checkbox id="cox_forest_chk" label="Generate Forest Plot (ggforest)" value="1" checked="true" />
+				<saveobject label="Save Model as" checkable="true" checked="true" initial="cox_model" id="cox_save_obj" />
+				<preview label="Preview" id="prv_Preview" />
+			</column>
+		</row>
+	</dialog>
+</document>

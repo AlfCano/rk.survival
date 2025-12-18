@@ -1,0 +1,117 @@
+<!DOCTYPE
+	rkpluginmap
+>
+<document
+	base_prefix=""
+	namespace="KaplanMeier"
+	id="KaplanMeier_rkward"
+	po_id="KaplanMeier_rkward"
+	priority="medium"
+>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<about
+		name="rk.survival"
+		shortinfo="An RKWard plugin for modern survival analysis and visualization using 'survival' and 'survminer'."
+		longinfo="An RKWard plugin for modern survival analysis and visualization using 'survival' and 'survminer'."
+		version="0.0.1"
+		releasedate="2025-12-18"
+		url="https://github.com/AlfCano/rk.survival"
+		license="GPL (&gt;= 3)"
+	>
+		<author
+			given="Alfonso"
+			family="Cano"
+			email="alfonso.cano@correo.buap.mx"
+			role="aut, cre"
+		/>
+	</about>
+	<require
+		map="rkward::menu"
+	/>
+	<require
+		map="rkward::embedded"
+	/>
+	<components>
+		<component
+			id="cmp_KaplanMeierCoxPH"
+			label="CoxPH"
+			type="standard"
+			file="plugins/CoxPH.xml"
+		>
+		</component>
+		<component
+			id="cmp_KaplanMeierCoxDiagnostics"
+			label="CoxDiagnostics"
+			type="standard"
+			file="plugins/CoxDiagnostics.xml"
+		>
+		</component>
+		<component
+			id="cmp_KaplanMeierKaplanMeier"
+			label="Kaplan-Meier"
+			type="standard"
+			file="plugins/KaplanMeier.xml"
+		>
+		</component>
+	</components>
+	<hierarchy>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="SurvivalAnalysissurvminer"
+				label="Survival Analysis (survminer)"
+			>
+				<entry
+					component="cmp_KaplanMeierCoxPH"
+				/>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="SurvivalAnalysissurvminer"
+				label="Survival Analysis (survminer)"
+			>
+				<entry
+					component="cmp_KaplanMeierCoxDiagnostics"
+				/>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="SurvivalAnalysissurvminer"
+				label="Survival Analysis (survminer)"
+			>
+				<entry
+					component="cmp_KaplanMeierKaplanMeier"
+				/>
+			</menu>
+		</menu>
+	</hierarchy>
+	<!--
+		<context
+			id="x11"
+		>
+		</context>
+	-->
+	<!--
+		<context
+			id="import"
+		>
+		</context>
+	-->
+</document>
